@@ -18,7 +18,8 @@ var APPPATHS = {
   root: 'dist/',
   css: 'dist/css',
   js: 'dist/js',
-  img: 'dist/img'
+  img: 'dist/img',
+  fonts: 'dist/fonts'
 }
 
 gulp.task('clean-html', function(){
@@ -34,16 +35,23 @@ gulp.task('clean-scripts', function(){
 gulp.task('sass', function(){
 
   var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css')
+  var fontAwesomeCSS = gulp.src('./node_modules/font-awesome/css/font-awesome.css')
   var sassFiles;
 
   sassFiles = gulp.src(SOURCEPATHS.sass)
   .pipe(autoprefixer())
   .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 
-  return merge(bootstrapCSS, sassFiles)
+  return merge(bootstrapCSS, fontAwesomeCSS, sassFiles)
     .pipe(concat('app.css'))
   .pipe(gulp.dest(APPPATHS.css));
 });
+
+gulp.task('copy-fonts', function(){
+  gulp.src('./node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2}')
+      .pipe(gulp.dest(APPPATHS.fonts))
+
+})
 
 gulp.task('scripts', ['clean-scripts'], function(){
   gulp.src(SOURCEPATHS.js)
@@ -65,7 +73,7 @@ gulp.task('serve', ['sass'], function(){
   })
 });
 
-gulp.task('watch', ['serve', 'sass', 'copy', 'clean-html', 'scripts', 'clean-scripts'], function(){
+gulp.task('watch', ['serve', 'sass', 'copy', 'clean-html', 'scripts', 'clean-scripts', 'copy-fonts'], function(){
   gulp.watch([SOURCEPATHS.sass], ['sass']);
   gulp.watch([SOURCEPATHS.html], ['copy']);
   gulp.watch([SOURCEPATHS.js], ['scripts']);
