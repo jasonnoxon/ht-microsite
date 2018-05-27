@@ -7,7 +7,8 @@ var clean = require('gulp-clean');
 
 var SOURCEPATHS = {
   sass: 'src/scss/*.scss',
-  html: 'src/html/*.html'
+  html: 'src/html/*.html',
+  js: 'src/js/*.js'
 }
 
 var APPPATHS = {
@@ -22,12 +23,22 @@ gulp.task('clean-html', function(){
              .pipe(clean())
 });
 
+gulp.task('clean-scripts', function(){
+  return gulp.src(APPPATHS.js + '/*.js', {read: false, force: true})
+             .pipe(clean())
+});
+
 gulp.task('sass', function(){
   return gulp.src(SOURCEPATHS.sass)
   .pipe(autoprefixer())
   .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
   .pipe(gulp.dest(APPPATHS.css));
 });
+
+gulp.task('scripts', ['clean-scripts'], function(){
+  gulp.src(SOURCEPATHS.js)
+      .pipe(gulp.dest(APPPATHS.js));
+})
 
 gulp.task('copy', ['clean-html'], function(){
   gulp.src(SOURCEPATHS.html)
@@ -42,9 +53,10 @@ gulp.task('serve', ['sass'], function(){
   })
 });
 
-gulp.task('watch', ['serve', 'sass', 'copy', 'clean-html'], function(){
+gulp.task('watch', ['serve', 'sass', 'copy', 'clean-html', 'scripts', 'clean-scripts'], function(){
   gulp.watch([SOURCEPATHS.sass], ['sass']);
   gulp.watch([SOURCEPATHS.html], ['copy']);
+  gulp.watch([SOURCEPATHS.js], ['scripts']);
 });
 
 gulp.task('default', ['watch']);
