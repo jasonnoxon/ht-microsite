@@ -3,6 +3,13 @@ popper = require('popper.js');
 bootstrap = require('bootstrap');
 mustache = require('mustache');
 
-jQuery(document).ready( function() {
+jQuery(document).ready( function($) {
+  var jqhxr = $.getJSON('data.json', function(){
+
+  }).done( function(data){
+    var template = $('#template').html();
+    var showTemplate = mustache.render(template, data);
+    $('#gallery').html(showTemplate)
+  });
 
 })
