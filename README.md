@@ -11,4 +11,6 @@ A Workflow with NPM, SASS, Gulp, and more! Need to slim this down a bit, but a g
 
 3. Run 'npm install' to install project dependencies
 
+---
+
 Not super happy with 'mustache'...will use something else.
