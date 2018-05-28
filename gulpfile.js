@@ -10,6 +10,9 @@ var merge = require('merge-stream');
 var newer = require('gulp-newer');
 var imagemin = require('gulp-imagemin');
 var injectPartials = require('gulp-inject-partials');
+var minify = require('gulp-minify');
+var rename = require('gulp-rename');
+var cssmin = require('gulp-cssmin');
 
 var SOURCEPATHS = {
   sass: 'src/scss/*.scss',
@@ -37,6 +40,12 @@ gulp.task('clean-scripts', function(){
              .pipe(clean())
 });
 
+gulp.task('html', function() {
+    return gulp.src(SOURCEPATHS.html)
+               .pipe(injectPartials())
+               .pipe(gulp.dest(APPPATHS.root));
+});
+
 gulp.task('sass', function(){
 
   var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css')
@@ -59,7 +68,6 @@ gulp.task('images', function(){
                .pipe(gulp.dest(APPPATHS.img));
 });
 
-
 gulp.task('copy-fonts', function(){
   gulp.src('./node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2}')
       .pipe(gulp.dest(APPPATHS.fonts))
@@ -73,16 +81,38 @@ gulp.task('scripts', ['clean-scripts'], function(){
       .pipe(gulp.dest(APPPATHS.js));
 })
 
+//** Production Tasks  **//
+gulp.task('compress-js', function(){
+  gulp.src(SOURCEPATHS.js)
+      .pipe(concat('main.js'))
+      .pipe(browserify())
+      .pipe(minify())
+      .pipe(gulp.dest(APPPATHS.js));
+})
+
+gulp.task('compress-css', function(){
+
+  var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css')
+  var fontAwesomeCSS = gulp.src('./node_modules/font-awesome/css/font-awesome.css')
+  var sassFiles;
+
+  sassFiles = gulp.src(SOURCEPATHS.sass)
+  .pipe(autoprefixer())
+  .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+
+  return merge(bootstrapCSS, fontAwesomeCSS, sassFiles)
+    .pipe(concat('app.css'))
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(APPPATHS.css));
+});
+
+//** END Production Tasks  **//
+
 // gulp.task('copy', ['clean-html'], function(){
 //   gulp.src(SOURCEPATHS.html)
 //       .pipe(gulp.dest(APPPATHS.root));
 // });
-
-gulp.task('html', function() {
-    return gulp.src(SOURCEPATHS.html)
-               .pipe(injectPartials())
-               .pipe(gulp.dest(APPPATHS.root));
-});
 
 gulp.task('serve', ['sass'], function(){
   browserSync.init([APPPATHS.css + '/*.css', APPPATHS.root + '/*.html', APPPATHS.js + '/*.js'], {
