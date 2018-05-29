@@ -21,7 +21,8 @@ var SOURCEPATHS = {
   html: 'src/html/*.html',
   htmlPartial: 'src/html/partials/*.html',
   js: 'src/js/*.js',
-  img: 'src/img/**'
+  img: 'src/img/**',
+  docs: 'src/docs/**'
 }
 
 var DEVPATHS = {
@@ -29,7 +30,8 @@ var DEVPATHS = {
   css: 'dev/css',
   js: 'dev/js',
   img: 'dev/img',
-  fonts: 'dev/fonts'
+  fonts: 'dev/fonts',
+  docs: 'dev/docs'
 }
 
 var BUILDPATHS = {
@@ -37,7 +39,8 @@ var BUILDPATHS = {
   css: 'build/css',
   js: 'build/js',
   img: 'build/img',
-  fonts: 'build/fonts'
+  fonts: 'build/fonts',
+  docs: 'build/docs'
 }
 
 gulp.task('clean-html', function(){
@@ -91,6 +94,11 @@ gulp.task('scripts', ['clean-scripts'], function(){
       .pipe(gulp.dest(DEVPATHS.js));
 })
 
+gulp.task('docs', function(){
+  gulp.src(SOURCEPATHS.docs)
+      .pipe(gulp.dest(DEVPATHS.docs))
+});
+
 //** Production Tasks  **//
 gulp.task('compress-html', function() {
     return gulp.src(SOURCEPATHS.html)
@@ -138,7 +146,11 @@ gulp.task('images-build', function(){
 gulp.task('copy-fonts-build', function(){
   gulp.src('./node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2}')
       .pipe(gulp.dest(BUILDPATHS.fonts))
+})
 
+gulp.task('docs-build', function(){
+  gulp.src(SOURCEPATHS.docs)
+      .pipe(gulp.dest(BUILDPATHS.docs))
 })
 
 //** END Production Tasks  **//
@@ -166,4 +178,4 @@ gulp.task('watch', ['serve', 'sass', 'html', 'clean-html', 'scripts', 'clean-scr
 
 gulp.task('default', ['watch']);
 
-gulp.task('build', ['compress-html', 'compress-js', 'compress-css', 'images-build', 'copy-fonts-build'])
+gulp.task('build', ['compress-html', 'compress-js', 'compress-css', 'images-build', 'copy-fonts-build', 'docs-build'])
