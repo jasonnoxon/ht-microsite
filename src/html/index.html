@@ -1,18 +1,5 @@
 <!-- partial:partials/_header.html -->
 <!-- partial -->
-    <div class="preload"><img src="img/ht-logo.png"> <img src="img/connects-patients.jpg"> <img src="img/collaborate.jpg.jpg"> <img src="img/measure-impact.jpg"></div>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="#"><img src="img/ht-logo.png" alt="Healthy Together Logo" height="50"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="joinus.html">Join Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
-                </ul><a href="https://app.uniteus.io/sign-in" target="_blank" class="btn btn-default my-2 my-sm-0">Login</a></div>
-        </nav>
-    </header>
     <main role="main">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -57,49 +44,26 @@
             <div class="row">
                 <div class="col-lg-4"><img class="rounded-circle" src="img/icon-puzzle.png" alt="Generic placeholder image" width="140" height="140">
                     <h2>Building Communities</h2>
-                    <p>Healthy Together is a referral network that will powers a community-wide care network. We’ve named our network Healthy Together to call to our desire to have this tool serve our entire community.</p>
+                    <p>Healthy Together is a referral network that powers a community-wide care network. We’ve named our network Healthy Together to call to our desire to have this tool serve our <em>entire</em> community.</p>
                     <p><a class="btn btn-secondary" href="joinus.html" role="button">Join Us &raquo;</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4"><img class="rounded-circle" src="img/icon-lightbulb.png" alt="Generic placeholder image" width="140" height="140">
                     <h2>Innovative Collaboration</h2>
-                    <p>Healthy Together will allow those participating in the program throughout Albany, Fulton, Montgomery, Rensselaer, Saratoga, and Schenectady counties to connect in real time with social service providers such as housing and workforce development agencies, behavioral health providers, and food pantries.</p>
+                    <p>Those participating in the program throughout Albany, Fulton, Montgomery, Rensselaer, Saratoga, and Schenectady counties are able to connect, in real time, with social service providers such as housing and workforce development agencies, behavioral health providers, and food pantries.</p>
                     <p><a class="btn btn-secondary" href="joinus.html" role="button">Join Us &raquo;</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4"><img class="rounded-circle" src="img/icon-graph.png" alt="Generic placeholder image" width="140" height="140">
                     <h2>Measure Progress</h2>
-                    <p>Healthy Together captures the necessary data and outcomes in real-time; enabling communities to continually improve service delivery, report quality measures, and use real outcome data to support gaps in services.</p>
+                    <p>Healthy Together captures the necessary data and outcomes in real-time; enabling communities to continually improve service delivery, report quality measures, and use real outcome data to locate gaps in services.</p>
                     <p><a class="btn btn-secondary" href="joinus.html" role="button">Join Us &raquo;</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
-            <h2>Healthy Together Participants</h2>
-            <div id="app" class="row">
-                <div class="card" v-for="partner in partners"><img class="card-img-top centered" :src="partner.logo_url" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ partner.name }}</h5>
-                        <p class="card-text">{{ partner.description | truncate(100, '...') }}</p>
-                        <button class="btn btn-default float-right" data-toggle="modal" data-target="#PartnerDetailModal" v-on:click="setActivePartner(partner.id)">More...</button>
-                    </div>
-                </div>
-                <div class="modal fade" id="PartnerDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">{{ active_partner.name}}</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body"><img class="detail-logo" :src="active_partner.logo_url" alt="Partner Logo"> <span v-html="active_partner.description"></span> <a target="_blank" :href="active_partner.website_url">{{ active_partner.website_url }}</a></div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /row -->
+            <!-- partial:partials/_participants.html -->
+            <!-- partial -->
         </div>
         <!-- /.container -->
 <!-- partial:partials/_footer.html -->

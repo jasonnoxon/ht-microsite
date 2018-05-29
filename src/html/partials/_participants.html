@@ -1,0 +1,25 @@
+<h2>Healthy Together Participants</h2>
+<div id="app" class="row col-md-12">
+    <div id="loader">Loading...</div>
+    <div class="card" v-for="partner in partners"><img class="card-img-top centered" :src="partner.logo_url" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ partner.name }}</h5>
+            <p class="card-text">{{ partner.description | truncate(100, '...') }}</p>
+            <button class="btn btn-default float-right" data-toggle="modal" data-target="#PartnerDetailModal" v-on:click="setActivePartner(partner.id)">More...</button>
+        </div>
+    </div>
+    <div class="modal fade" id="PartnerDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ active_partner.name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body"><img class="detail-logo" :src="active_partner.logo_url" alt="Partner Logo"> <span v-html="active_partner.description"></span> <a target="_blank" :href="active_partner.website_url">{{ active_partner.website_url }}</a></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
