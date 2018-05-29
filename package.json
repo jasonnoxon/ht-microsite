@@ -29,6 +29,7 @@
     "gulp-sass": "^4.0.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
     "gulp-browserify": "^0.5.1",
@@ -44,7 +45,8 @@
     "gulp-replace": "^1.0.0",
     "jquery": "^3.3.1",
     "merge-stream": "^1.0.1",
-    "mustache": "^2.3.0",
-    "popper.js": "^1.14.3"
+    "popper.js": "^1.14.3",
+    "vue": "^2.5.16",
+    "vue-axios": "^2.1.1"
   }
 }

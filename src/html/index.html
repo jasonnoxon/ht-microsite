@@ -1,52 +1,106 @@
-
 <!-- partial:partials/_header.html -->
 <!-- partial -->
-    <div class="container">
-      <div class="row">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/1200x500?text=First+Image" alt="First slide">
+    <div class="preload"><img src="img/ht-logo.png"> <img src="img/connects-patients.jpg"> <img src="img/collaborate.jpg.jpg"> <img src="img/measure-impact.jpg"></div>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#"><img src="img/ht-logo.png" alt="Healthy Together Logo" height="50"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="joinus.html">Join Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                </ul><a href="https://app.uniteus.io/sign-in" target="_blank" class="btn btn-default my-2 my-sm-0">Login</a></div>
+        </nav>
+    </header>
+    <main role="main">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active"><img class="first-slide" src="img/connects-patients.jpg" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1>Connects patients.</h1>
+                            <p>Healthy Together electronically connects patients to both clinical and social service providers.</p>
+                            <p><a class="btn btn-lg btn-primary" href="joinus.html" role="button">Join Healthy Together</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item"><img class="second-slide" src="img/collaborate.jpg" alt="second slide">
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1>Collaborate for better community health.</h1>
+                            <p>Healthy Together facilitates collaboration with community-wide care teams, ensuring providers are on the same page regarding their shared patients’ progress.</p>
+                            <p><a class="btn btn-lg btn-primary" href="joinus.html" role="button">Join us</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item"><img class="third-slide" src="img/measure-impact.jpg" alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption text-left">
+                            <h1>Measure the impact.</h1>
+                            <p>Use Healthy Together to collect data including structured patient outcomes to measure the network’s impact, including time to service and effectiveness of care.</p>
+                            <p><a class="btn btn-lg btn-primary" href="joinus.html" role="button">Join us</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div><a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a><a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span></a></div>
+        <!-- Marketing messaging and featurettes
+       ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+        <div class="container marketing">
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4"><img class="rounded-circle" src="img/icon-puzzle.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Building Communities</h2>
+                    <p>Healthy Together is a referral network that will powers a community-wide care network. We’ve named our network Healthy Together to call to our desire to have this tool serve our entire community.</p>
+                    <p><a class="btn btn-secondary" href="joinus.html" role="button">Join Us &raquo;</a></p>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4"><img class="rounded-circle" src="img/icon-lightbulb.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Innovative Collaboration</h2>
+                    <p>Healthy Together will allow those participating in the program throughout Albany, Fulton, Montgomery, Rensselaer, Saratoga, and Schenectady counties to connect in real time with social service providers such as housing and workforce development agencies, behavioral health providers, and food pantries.</p>
+                    <p><a class="btn btn-secondary" href="joinus.html" role="button">Join Us &raquo;</a></p>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4"><img class="rounded-circle" src="img/icon-graph.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2>Measure Progress</h2>
+                    <p>Healthy Together captures the necessary data and outcomes in real-time; enabling communities to continually improve service delivery, report quality measures, and use real outcome data to support gaps in services.</p>
+                    <p><a class="btn btn-secondary" href="joinus.html" role="button">Join Us &raquo;</a></p>
+                </div>
+                <!-- /.col-lg-4 -->
             </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/1200x500?text=Second+Image" alt="Second slide">
+            <!-- /.row -->
+            <h2>Healthy Together Participants</h2>
+            <div id="app" class="row">
+                <div class="card" v-for="partner in partners"><img class="card-img-top centered" :src="partner.logo_url" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ partner.name }}</h5>
+                        <p class="card-text">{{ partner.description | truncate(100, '...') }}</p>
+                        <button class="btn btn-default float-right" data-toggle="modal" data-target="#PartnerDetailModal" v-on:click="setActivePartner(partner.id)">More...</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="PartnerDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ active_partner.name}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body"><img class="detail-logo" :src="active_partner.logo_url" alt="Partner Logo"> <span v-html="active_partner.description"></span> <a target="_blank" :href="active_partner.website_url">{{ active_partner.website_url }}</a></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/1200x500?text=Third+Image" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="fa fa-hand-o-left fa-3x" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="fa fa-hand-o-right fa-3x" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-      </div>
-    </div>
-    <div class="row">
-      <div id="gallery" style="width: 100%;"></div>
-      <script id="template" type="x-tmpl-mustache">
-        {{#gallery}}
-        <div class="col-md-6 col-sm-4">
-         <div class="card">
-            <img class="card-img-top" src="img/{{ image }}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{ destiny }}</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
+            <!-- /row -->
         </div>
-        {{/gallery}}
-      </script>
-    </div>
-  </div>
-  <!-- partial:partials/_footer.html -->
-  <!-- partial -->
+        <!-- /.container -->
+<!-- partial:partials/_footer.html -->
+<!-- partial -->
