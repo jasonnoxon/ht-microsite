@@ -1,16 +1,17 @@
-# SASS, NPM, and Gulp Workflow
-A Workflow with NPM, SASS, Gulp, and more! Need to slim this down a bit, but a good start.
+# Healthy Together Microsite
+I'm not sure how a microsite differs from a regular website, but there it is...
 
 #Instructions
-1. Clone this repo
-
-2. Make sure the following are installed:
+Make sure the following are installed:
   - [node.js](http://nodejs.org/)
   - [git](http://git-scm.com/)
   - [gulp](http://gulp.js)
 
-3. Run 'npm install' to install project dependencies
+Run 'npm install' to install project dependencies
 
----
+Run 'gulp' to run BrowserSync and create '/dev' directory.
 
-Not super happy with 'mustache'...will use something else.
+Run 'gulp build' to create build folder. The contents of that folder are what is updated to the webserver.
+
+#Note
+For production, delete the 'js/app.js' file from the build folder. Was too lazy to delete it in the 'compress-js' task.
