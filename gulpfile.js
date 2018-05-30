@@ -22,7 +22,7 @@ var SOURCEPATHS = {
   htmlPartial: 'src/html/partials/*.html',
   js: 'src/js/*.js',
   img: 'src/img/**',
-  docs: 'src/docs/**'
+  docs: 'src/docs/**',
 }
 
 var DEVPATHS = {
