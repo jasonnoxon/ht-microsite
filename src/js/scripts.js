@@ -1,16 +1,14 @@
 global.jQuery = require('jquery');
 popper = require('popper.js');
 bootstrap = require('bootstrap');
-Vue = require('../../node_modules/vue/dist/vue.js');
-vueResource = require('../../node_modules/vue-resource/dist/vue-resource.js');
+Vue = require('../../node_modules/vue/dist/vue.min.js');
+vueResource = require('../../node_modules/vue-resource/dist/vue-resource.min.js');
 
 var app = new Vue({
   el: '#app',
   created() {
     this.$http.get(this.url).then(function ({data}) {
         this.partners = data.data;
-
-        console.log(this.partners);
     });
   },
   data: {
