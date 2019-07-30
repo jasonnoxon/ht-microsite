@@ -23,13 +23,14 @@
   },
   "homepage": "https://github.com/jasonnoxon/workflow#readme",
   "devDependencies": {
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.26.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.2",
+    "natives": "^1.1.6"
   },
   "dependencies": {
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
     "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.4.0",
@@ -42,7 +43,7 @@
     "gulp-newer": "^1.4.0",
     "gulp-rename": "^1.2.3",
     "gulp-replace": "^1.0.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "merge-stream": "^1.0.1",
     "moustache": "0.0.2",
     "mustache": "^2.3.0",
