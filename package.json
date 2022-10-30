@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/jasonnoxon/workflow#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^4.0.2",
